@@ -1,4 +1,4 @@
-Python 
-Streamlit version = 1.12.2
+python 
+streamlit == 1.12.2
 joblib 
 numpy 
