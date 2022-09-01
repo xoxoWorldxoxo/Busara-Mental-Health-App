@@ -9,7 +9,7 @@ import sklearn
 
 # add banner image
 st.header("Busara Mental Health")
-st.image("/Users/Jmwaya/Desktop/D-LAB/busara/Busara_Mental_Health.jpeg")
+st.image("/Users/jackj/OneDrive/Documents/Busara-Mental-Health-App/Images/Busara_Mental_Health.jpeg")
 st.subheader(
     """
 A simple app that predicts if an individual suffers depression.
@@ -20,14 +20,14 @@ A simple app that predicts if an individual suffers depression.
 
 our_form = st.form(key="busara_form")
 
+edu = our_form.number_input("How many years of education?", min_value=1,max_value=30) 
+age = our_form.number_input("Enter age", min_value=1, max_value=100) 
+married = our_form.selectbox("Are you married?",("Yes","No")) 
+fs_adwholed_often = our_form.number_input("How many days without eating?", min_value=0,max_value=30), 
+fs_chskipm_often = our_form.number_input("How many meals skipped by children?", min_value=0,max_value=3),  
+fs_chwholed_often= our_form.number_input("How many days children go without eating ?", min_value=0,max_value=30)  
 ent_employees = our_form.number_input("How many Employees do you have?", min_value=0,max_value=100),  
 cons_alcohol = our_form.number_input("How much do you spend on alcohol?", min_value=0,max_value=1000),
-fs_adwholed_often = our_form.number_input("How many days without eating?", min_value=0,max_value=30),
-fs_chskipm_often = our_form.number_input("How many meals skipped by children?", min_value=0,max_value=3), 
-fs_chwholed_often= our_form.number_input("How many days children go without eating ?", min_value=0,max_value=30)
-age = our_form.number_input("Enter age", min_value=1, max_value=100)
-married = our_form.selectbox("Are you married?",("Yes","No"))
-edu = our_form.number_input("How many years of education?", min_value=1,max_value=30)
 
 submit = our_form.form_submit_button(label="make prediction")
 
@@ -35,13 +35,13 @@ submit = our_form.form_submit_button(label="make prediction")
 # load the model and scaler
 
 with open(
-    join(dirname(realpath(__file__)), "/Users/Jmwaya/Desktop/D-LAB/busara/ModelHist.pkl"),
+    join(dirname(realpath(__file__)), "/Users/jackj/OneDrive/Documents/Busara-Mental-Health-App/Model/ModelHist.pkl"),
     "rb",
 ) as f:
     model = joblib.load(f)
 
 with open(
-    join(dirname(realpath(__file__)), "/Users/Jmwaya/Desktop/D-LAB/busara/Scaler.pkl"), "rb"
+    join(dirname(realpath(__file__)), "/Users/jackj/OneDrive/Documents/Busara-Mental-Health-App/Preprocessing/Scaler.pkl"), "rb"
 ) as f:
     scaler = joblib.load(f)
     
